@@ -120,7 +120,7 @@ INVALID_ESCAPE
   ;
 
 EXPRESSION
-  : '{' ~[\r\n{}]* '}'  { ignoreWS = false; expectIfElse = false;}
+  : '{' (~[\r\n{}] | ESCAPE_CHARACTER)* '}'  { ignoreWS = false; expectIfElse = false;}
   ;
 
 TEMPLATE_REF
