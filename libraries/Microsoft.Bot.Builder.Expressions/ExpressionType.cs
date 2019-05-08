@@ -45,6 +45,7 @@ namespace Microsoft.Bot.Builder.Expressions
         public const string ToLower = "toLower";
         public const string ToUpper = "toUpper";
         public const string Trim = "trim";
+        public const string IsMatch = "isMatch";
 
         // Collection
         public const string Count = "count";

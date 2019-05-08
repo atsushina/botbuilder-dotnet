@@ -1377,6 +1377,11 @@ namespace Microsoft.Bot.Builder.Expressions
                     },
                     ReturnType.String,
                     expr => ValidateOrder(expr, null, ReturnType.Object, ReturnType.String)),
+                new ExpressionEvaluator(
+                    ExpressionType.IsMatch,
+                    Apply(args => new Regex(args[0]).IsMatch(args[1]), VerifyString),
+                    ReturnType.Boolean,
+                    (expression) => ValidateArityAndAnyType(expression, 2, 2, ReturnType.String)),
 
                 // Date and time
                 TimeTransform(ExpressionType.AddDays, (ts, add) => ts.AddDays(add)),

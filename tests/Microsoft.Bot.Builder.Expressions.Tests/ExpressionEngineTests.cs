@@ -160,6 +160,10 @@ namespace Microsoft.Bot.Builder.Expressions.Tests
             Test("trim(' hello ')", "hello"),
             Test("trim(' hello')", "hello"),
             Test("trim('hello')", "hello"),
+            Test("isMatch('[A-Z]{3}','ABCK')", true),
+            Test("isMatch('[A-Z]{3}','abc')", false),
+            Test("isMatch('\\\\d','3')", true),
+            Test("isMatch('\\\\d+','a')", false),
             # endregion
 
             # region  Logical comparison functions test
